@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moulana Hospital - Digital Marketing Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--tw-gradient-stops));
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .chart-container {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+    <!-- Chart.js for the area chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 p-4 sm:p-6 lg:p-12">
+    <div class="max-w-7xl mx-auto bg-white rounded-3xl shadow-2xl p-6 sm:p-10 lg:p-12 space-y-10">
+        <!-- Header Section -->
+        <header class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-12">
+            <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 leading-tight">Digital Marketing Report</h1>
+                <p class="mt-2 text-lg sm:text-xl text-gray-500">Moulana Hospital - Performance Overview</p>
+                <p class="mt-1 text-sm text-gray-400">March 2025 - August 2025</p>
+            </div>
+            <!-- Empty div for spacing, can be used for a logo later -->
+            <div></div>
+        </header>
+
+        <!-- Main Report Sections (arranged vertically) -->
+        <div class="space-y-10">
+            <!-- Card: Reach -->
+            <div class="card from-blue-50 via-blue-100 to-blue-200 shadow-md text-blue-800">
+                <div class="card-header border-b-2 border-blue-200">
+                    <h2 class="text-xl sm:text-2xl font-bold">Reach</h2>
+                    <span class="text-blue-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8m-2-2v8m0 0h8" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="card-content space-y-6">
+                    <!-- Website Traffic & SEO Ranking -->
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-blue-700">1. Website Traffic & SEO Ranking</h3>
+                        <p class="text-gray-600 text-sm mt-2">
+                            Monthly visitors and search rankings indicate our organic reach.
+                        </p>
+                        <!-- Area Chart Canvas -->
+                        <div class="mt-4 chart-container">
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                        <div class="mt-4">
+                            <h4 class="font-semibold text-blue-700 text-base">Top SEO Keywords & Rankings</h4>
+                            <ul class="list-disc list-inside mt-2 text-gray-600 text-sm">
+                                <li>Best Trauma Care Centre Near Palakkad: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Joint Replacement Surgery Centre in Perinthalmanna: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best ENT Treatment Centre in Perinthalmanna: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Lap Gynae Surgery Centre in Malappuram: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Ortho Doctors in Perinthalmanna: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Chest & Allergy Unit in Perinthalmanna: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Urology Surgery Centre in Malappuram: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Knee Joint Replacement Centre in Malappuram: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Endocrinology Centre in Malappuram: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Laser Treatment Centre in Malabar for Urinary Stone: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Rehabilitation Unit in Malappuram: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Trauma Care Centre in Malappuram: <span class="font-bold text-blue-600">#1</span></li>
+                                <li>Best Paediatric Gastroenterology Centre in Malappuram: <span class="font-bold text-blue-600">#1</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Social Media Reach & Follower Growth -->
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-blue-700">2. Social Media Reach & Follower Growth</h3>
+                        <p class="text-gray-600 text-sm mt-2">
+                            We track the growth of our social media audience and the total reach of our content.
+                        </p>
+                        <div class="mt-4">
+                             <h4 class="font-semibold text-blue-700 text-base">New Followers</h4>
+                             <div class="chart-container">
+                                 <canvas id="socialChart"></canvas>
+                             </div>
+                             <h4 class="font-semibold text-blue-700 text-base mt-4">Social Media Reach</h4>
+                             <div class="chart-container">
+                                 <canvas id="socialReachChart"></canvas>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Engagement -->
+            <div class="card from-green-50 via-green-100 to-green-200 shadow-md text-green-800">
+                <div class="card-header border-b-2 border-green-200">
+                    <h2 class="text-xl sm:text-2xl font-bold">Engagement</h2>
+                    <span class="text-green-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="card-content space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-green-700">Engagement rate</h3>
+                        <div class="mt-2">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-500">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="py-3 px-6">Month</th>
+                                            <th scope="col" class="py-3 px-6">FB</th>
+                                            <th scope="col" class="py-3 px-6">Insta</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">March</td>
+                                            <td class="py-4 px-6">0.55%</td>
+                                            <td class="py-4 px-6">1.46%</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">April</td>
+                                            <td class="py-4 px-6">0.54%</td>
+                                            <td class="py-4 px-6">1.42%</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">May</td>
+                                            <td class="py-4 px-6">0.22%</td>
+                                            <td class="py-4 px-6">0.59%</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">June</td>
+                                            <td class="py-4 px-6">0.22%</td>
+                                            <td class="py-4 px-6">0.50%</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">July</td>
+                                            <td class="py-4 px-6">0.21%</td>
+                                            <td class="py-4 px-6">0.55%</td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">August</td>
+                                            <td class="py-4 px-6">1.45%</td>
+                                            <td class="py-4 px-6">0.50%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-green-700">CTR on ads, bounce rate, video views</h3>
+                        <div class="mt-2">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-500">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="py-3 px-6">Month</th>
+                                            <th scope="col" class="py-3 px-6">Ad CTR</th>
+                                            <th scope="col" class="py-3 px-6">Video Views</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">March</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">April</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">May</td>
+                                            <td class="py-4 px-6">2-3%</td>
+                                            <td class="py-4 px-6">28,788-155,460</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">June</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">July</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">August</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                            <td class="py-4 px-6">No Data</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Conversions -->
+            <div class="card from-purple-50 via-purple-100 to-purple-200 shadow-md text-purple-800">
+                <div class="card-header border-b-2 border-purple-200">
+                    <h2 class="text-xl sm:text-2xl font-bold">Conversions</h2>
+                    <span class="text-purple-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="card-content space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-purple-700">Appointments/Bookings from digital channels</h3>
+                        <!-- New Chart for Appointments -->
+                        <div class="mt-4 chart-container">
+                            <canvas id="appointmentsChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-purple-700">Cost per Lead (CPL)</h3>
+                        <p class="text-2xl sm:text-3xl font-bold text-purple-600">₹ 28.72</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-purple-700">Conversion Rate OP → IP conversions</h3>
+                        <div class="mt-2 text-2xl sm:text-3xl font-bold text-purple-600">
+                            <!-- Placeholder for dynamic data -->
+                            <p class="text-gray-400">Add Data Here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Reputation -->
+            <div class="card from-yellow-50 via-yellow-100 to-yellow-200 shadow-md text-yellow-800">
+                <div class="card-header border-b-2 border-yellow-200">
+                    <h2 class="text-xl sm:text-2xl font-bold">Reputation</h2>
+                    <span class="text-yellow-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.54 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.785.57-1.84-.196-1.54-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.381-1.81.587-1.81h4.915a1 1 0 00.95-.69l1.519-4.674z" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="card-content space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-yellow-700">Online reviews & ratings</h3>
+                        <!-- Star Rating and table -->
+                        <div class="mt-4 flex flex-col items-center">
+                            <div class="flex items-center text-yellow-500 text-3xl sm:text-4xl">
+                                <!-- Full stars -->
+                                <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <!-- Partial star (4.2 out of 5) -->
+                                <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current text-yellow-300" viewBox="0 0 24 24"><path d="M12 15.4l-3.71 2.22 1-4.22L5.88 9.24l4.29-.37L12 5.25l1.83 3.62 4.29.37-3.41 2.45 1 4.22z"/></svg>
+                            </div>
+                            <span class="text-4xl sm:text-5xl font-extrabold text-yellow-600 mt-2">4.2/5</span>
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Average Review Score</p>
+                            <div class="mt-4 overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-500">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="py-3 px-6">Month</th>
+                                            <th scope="col" class="py-3 px-6">Ratings</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">May</td>
+                                            <td class="py-4 px-6">4.1</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">June</td>
+                                            <td class="py-4 px-6">4.1</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">July</td>
+                                            <td class="py-4 px-6">4.1</td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">August</td>
+                                            <td class="py-4 px-6">4.2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-yellow-700">Response rate to reviews</h3>
+                        <p class="text-2xl sm:text-3xl font-bold text-yellow-600 mt-2">
+                           Time of Replying on google: 10am, 1pm, 4.30pm
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-yellow-700">Patient feedback/NPS</h3>
+                        <p class="text-2xl sm:text-3xl font-bold text-yellow-600 mt-2">Add Data Here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Cost Efficiency -->
+            <div class="card from-red-50 via-red-100 to-red-200 shadow-md text-red-800">
+                <div class="card-header border-b-2 border-red-200">
+                    <h2 class="text-xl sm:text-2xl font-bold">Cost Efficiency</h2>
+                    <span class="text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v4m0 0h-4m4 0h4m-8-5h1.5a2.5 2.5 0 012.5 2.5v1a2.5 2.5 0 01-2.5 2.5H9m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="card-content space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-red-700">Spend vs revenue generated</h3>
+                        <p class="text-2xl sm:text-3xl font-bold text-red-600 mt-2">Add Data Here</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-red-700">ROAS & Cost per Acquisition (CPA)</h3>
+                        <p class="text-2xl sm:text-3xl font-bold text-red-600 mt-2">Add Data Here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Content -->
+            <div class="card from-teal-50 via-teal-100 to-teal-200 shadow-md text-teal-800">
+                <div class="card-header border-b-2 border-teal-200">
+                    <h2 class="text-xl sm:text-2xl font-bold">Content</h2>
+                    <span class="text-teal-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2m14 0V9a2 2 0 00-2-2m-2 2V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4m4 6h.01M17 10h.01" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="card-content space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-teal-700">New campaigns launched</h3>
+                        <p class="text-2xl sm:text-3xl font-bold text-teal-600 mt-2">Add Data Here</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-teal-700">Blog/video performance</h3>
+                        <div class="mt-2 text-sm text-gray-600">
+                            <p class="font-semibold mb-2">March</p>
+                            <ul class="list-disc list-inside">
+                                <li>Obesity Website Inauguration (FB)</li>
+                                <li>കൃത്യമായ വ്യായാമം പോലെ പ്രധാനമാണ് (Insta)</li>
+                            </ul>
+                            <p class="font-semibold mt-4 mb-2">April</p>
+                            <ul class="list-disc list-inside">
+                                <li>ഡോക്ടർമാർക്ക് കൂട്ടായി റോബോട്ടും (FB)</li>
+                                <li>(Video) ഡോക്ടർമാർക്ക് കൂട്ടായി റോബോട്ടും (Insta)</li>
+                                <li>(Poster)</li>
+                            </ul>
+                            <p class="font-semibold mt-4 mb-2">May</p>
+                            <ul class="list-disc list-inside">
+                                <li>Nurses day Reel (FB)</li>
+                                <li>Nurses Day Reel (Insta)</li>
+                            </ul>
+                            <p class="font-semibold mt-4 mb-2">June</p>
+                            <ul class="list-disc list-inside">
+                                <li>Dr Ashna Welcome Poster (FB)</li>
+                                <li>Dr. Susruth (Gastro) Reel - Fatty liver (Insta)</li>
+                            </ul>
+                            <p class="font-semibold mt-4 mb-2">July</p>
+                            <ul class="list-disc list-inside">
+                                <li>Diabetes Dr. Viji Reel - Gestational (FB)</li>
+                                <li>Dr. Naheetha Reel - LDR Suite (Insta)</li>
+                            </ul>
+                            <p class="font-semibold mt-4 mb-2">August</p>
+                            <ul class="list-disc list-inside">
+                                <li>Independence day & Moulana Early Steps (FB)</li>
+                                <li>Independence day & Moulana Early Steps (Insta)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base sm:text-lg text-teal-700">Email open & click rates</h3>
+                        <p class="text-2xl sm:text-3xl font-bold text-teal-600 mt-2">Add Data Here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="mt-10 sm:mt-12 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Moulana Hospital. All rights reserved.</p>
+            <p>All under the Digital Marketing Department</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+            const socialCtx = document.getElementById('socialChart').getContext('2d');
+            const socialReachCtx = document.getElementById('socialReachChart').getContext('2d');
+            const appointmentsCtx = document.getElementById('appointmentsChart').getContext('2d');
+            
+            const trafficChart = new Chart(trafficCtx, {
+                type: 'line',
+                data: {
+                    labels: ['March', 'April', 'May', 'June', 'July', 'August'],
+                    datasets: [{
+                        label: 'Active Users',
+                        data: [7200, 7200, 7800, 7900, 8500, 8200],
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: 'New Users',
+                        data: [6400, 6500, 6900, 7000, 7400, 7100],
+                        borderColor: 'rgb(34, 197, 94)',
+                        backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#4b5563',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    }
+                }
+            });
+
+            const socialChart = new Chart(socialCtx, {
+                type: 'line',
+                data: {
+                    labels: ['March', 'April', 'May', 'June', 'July', 'August'],
+                    datasets: [{
+                        label: 'FB Followers',
+                        data: [56, 73, 64, 39, 42, 61],
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: 'Insta Followers',
+                        data: [243, 204, 508, 243, 850, 425],
+                        borderColor: 'rgb(239, 68, 68)',
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#4b5563',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    }
+                }
+            });
+
+            const socialReachChart = new Chart(socialReachCtx, {
+                type: 'line',
+                data: {
+                    labels: ['March', 'April', 'May', 'June', 'July', 'August'],
+                    datasets: [{
+                        label: 'FB Reach',
+                        data: [69930, 45328, 280431, 141172, 28140, 61324],
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: 'Insta Reach',
+                        data: [30236, 22410, 140655, 11626, 22978, 34652],
+                        borderColor: 'rgb(239, 68, 68)',
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#4b5563',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    }
+                }
+            });
+            const appointmentsChart = new Chart(appointmentsCtx, {
+                type: 'line',
+                data: {
+                    labels: ['March', 'April', 'May', 'June', 'July', 'August'],
+                    datasets: [{
+                        label: 'Booked',
+                        data: [1119, 1669, 1599, 1547, 1594, 1820],
+                        borderColor: 'rgb(124, 58, 237)',
+                        backgroundColor: 'rgba(124, 58, 237, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: 'Visited',
+                        data: [921, 1388, 1294, 1260, 1204, 1443],
+                        borderColor: 'rgb(217, 70, 239)',
+                        backgroundColor: 'rgba(217, 70, 239, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#4b5563',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
